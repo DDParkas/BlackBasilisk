@@ -12,7 +12,7 @@ class PageObject{
   }
   public function getPage($url){
     $page = $this->client->get($url);
-    return $page->getBody()->getContents();
+    return new Parser($page->getBody()->getContents());
   }
 }
 
