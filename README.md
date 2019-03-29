@@ -1,6 +1,7 @@
-# Black Basilisk
+# Black Basilisk v1.0.0
 
  Projeto de bot com captura por Xpath.
+ 
  
 ## Requerimentos:
 
@@ -15,7 +16,7 @@
 
 ```php
 <?php
-// Ultilixando a pagina index.php
+// Utilizando a pagina index.php
 use Pinus\blackbasilisk\src\PageObject;
 use Pinus\blackbasilisk\src\Parser;
 require_once "vendor/autoload.php";
@@ -24,12 +25,12 @@ $page = new PageObject();
 // Captura palavara 'Tables' da pagina informada
 var_dump($page->getPage("http://www.w3schools.com/html/html_tables.asp")->getXpath('//h1/span[@class="color_h1"]'));
 ```
-## Tecnologias ultilizadas:
+## Frameworks utilizados:
 
 - [Composer v1.8.4](https://getcomposer.org/)
 - [Guzzle HTTP v6.3](http://docs.guzzlephp.org/en/stable/)
 - [Synfony DomCrawler v3.2](https://symfony.com/doc/current/components/dom_crawler.html)
 
-## Blog:
+## Site:
 
 - [Studio Pinus](https://studiopinus.com/black-basilisk/)
