@@ -1,22 +1,20 @@
 <?php
-namespace Forseti\Iterator;
+
+namespace Pinus\blackbasilisk\src\PageObject;
 
 use GuzzleHttp\Client;
+use Pinus\blackbasilisk\src\Parser\Parser;
 
 class PageObject{
 
   private $client;
 
   public function __construct(){
-
     $this->client = new Client();
-
   }
-
-  public function getPage(){
-
-    $page = $this->client->get("https://www.w3schools.com/html/html_tables.asp");
+  public function getPage($url){
+    $page = $this->client->get($url);
     return new Parser($page->getBody()->getContents());
-
   }
 }
+

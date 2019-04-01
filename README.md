@@ -22,8 +22,13 @@ use Pinus\blackbasilisk\src\Parser;
 require_once "vendor/autoload.php";
 
 $page = new PageObject();
-// Captura palavara 'Tables' da pagina informada
-var_dump($page->getPage("http://www.w3schools.com/html/html_tables.asp")->getXpath('//h1/span[@class="color_h1"]'));
+
+$parser = $page->getPage('studiopinus.com');  // Faz a requisição na pagina
+
+var_dump($parser->getXpathByAttr('//div[@class="readmore"]/a', 'href')); // Retorna o atributo
+var_dump($parser->getXpathByText('//div[@class="readmore"]/a')); // Retorna o texto
+
+
 ```
 ## Frameworks utilizados:
 

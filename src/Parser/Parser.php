@@ -1,6 +1,6 @@
 <?php
 
-namespace Pinus\blackbasilisk\src;
+namespace Pinus\blackbasilisk\src\Parser;
 use Symfony\Component\DomCrawler\Crawler;
 
 Class Parser{
@@ -17,13 +17,18 @@ Class Parser{
     return $this->crawler->html();
 
   }
-  public function getXpath($xpath){
+  public function getXpathByText($xpath){
 
     return $this->crawler->filterXpath($xpath)->text();
+
+  }
+  public function getXpathByAttr($xpath, $attr){
+
+    return $this->crawler->filterXpath($xpath)->attr($attr);
 
   }
 
 
 
 }
- ?>
+

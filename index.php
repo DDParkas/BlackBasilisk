@@ -1,7 +1,15 @@
 <?php
-use Pinus\blackbasilisk\src\PageObject;
-use Pinus\blackbasilisk\src\Parser;
+use Pinus\blackbasilisk\src\PageObject\PageObject;
+use Pinus\blackbasilisk\src\Parser\Parser;
 require_once "vendor/autoload.php";
 
 $page = new PageObject();
-var_dump($page->getPage("http://www.w3schools.com/html/html_tables.asp")->getXpath('//h1/span[@class="color_h1"]'));
+
+$parser = $page->getPage('studiopinus.com');  // Faz a requisição na pagina
+
+var_dump($parser->getXpathByAttr('//div[@class="readmore"]/a', 'href')); // Retorna o atributo
+var_dump($parser->getXpathByText('//div[@class="readmore"]/a')); // Retorna o texto
+
+
+
+
