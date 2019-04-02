@@ -1,4 +1,4 @@
-# Black Basilisk v1.0.0
+# Black Basilisk v1.0.1
 
  Projeto de bot com captura por Xpath.
  
